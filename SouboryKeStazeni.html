@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Soubory ke stažení</title>
+    <link rel="stylesheet" href="StylStazeni.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Soubory ke stažení:</h1>
+        <p>Klikněte na jedno ze dvou talčítek pro stažení vámi vybraného souboru:</p>
+        <button onclick="downloadFile('HerniDeska.png')">Herní deska</button>
+        <button onclick="downloadFile('Figurky.stl')">figurky</button>
+    </div>
+
+    <script>
+        function downloadFile(filename) {
+            
+            var link = document.createElement('a');
+            
+            link.setAttribute('href', filename);
+            link.setAttribute('download', '');
+            
+            document.body.appendChild(link);
+            
+            link.click();
+            
+            document.body.removeChild(link);
+        }
+    </script>
+</body>
+</html>
